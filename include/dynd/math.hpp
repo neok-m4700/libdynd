@@ -224,14 +224,14 @@ complex<T> exp(complex<T> z) {
     if (isfinite(i)) {
       ret = complex<T>(x * c, x * s);
     } else {
-      ret = complex<T>(_nan<T>(NULL), copysign(_nan<T>(NULL), i));
+      ret = complex<T>(_nan<T>(""), copysign(_nan<T>(""), i));
     }
   } else if (isnan(r)) {
     // r is nan
     if (i == 0) {
       ret = complex<T>(r, 0);
     } else {
-      ret = complex<T>(r, copysign(_nan<T>(NULL), i));
+      ret = complex<T>(r, copysign(_nan<T>(""), i));
     }
   } else {
     // r is +- inf
@@ -245,7 +245,7 @@ complex<T> exp(complex<T> z) {
         ret = complex<T>(r * c, r * s);
       } else {
         // x = +inf, y = +-inf | nan
-        ret = complex<T>(r, _nan<T>(NULL));
+        ret = complex<T>(r, _nan<T>(""));
       }
     } else {
       if (isfinite(i)) {
