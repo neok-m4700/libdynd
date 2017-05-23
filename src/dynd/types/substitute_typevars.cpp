@@ -157,6 +157,7 @@ ndt::type ndt::detail::internal_substitute(const ndt::type &pattern, const std::
     }
 #endif
   }
+  // fallthrough
   case typevar_id: {
     map<std::string, ndt::type>::const_iterator it = typevars.find(pattern.extended<typevar_type>()->get_name());
     if (it != typevars.end()) {
